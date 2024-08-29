@@ -1,0 +1,8 @@
+Flask
+matplotlib
+numpy
+scikit-learn
+MultiColumnLabelEncoder
+seaborn
+xgboost
+
