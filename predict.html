@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Productivity Prediction Using ML</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #00bfff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #00a1d4;
+        }
+
+        /* Background and Form Styling */
+        .prediction-container {
+            background-image: url('predict.png'); /* Replace with the path to your image */
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container input[type="text"] {
+            width: 200px;
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <span style="color: white; font-size: 22px;">Employee Productivity Prediction Using ML</span>
+        <div>
+            <a href="./">Home</a>
+            <a href="./about">About</a>
+        </div>
+    </nav>
+
+    <!-- Prediction Form Section -->
+    <div class="prediction-container">
+        <div class="form-container">
+            <form action="/pred" method="POST">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="quarter">Quarter</label>
+                        <input type="text" id="quarter" name="quarter">
+                    </div>
+                    <div class="grid-item">
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department">
+                    </div>
+                    <div class="grid-item">
+                        <label for="day">Day</label>
+                        <input type="text" id="day" name="day">
+                    </div>
+                    <div class="grid-item">
+                        <label for="team">Team</label>
+                        <input type="text" id="team" name="team">
+                    </div>
+                    <div class="grid-item">
+                        <label for="targeted_productivity">Targeted Productivity</label>
+                        <input type="text" id="targeted_productivity" name="targeted_productivity">
+                    </div>
+                    <div class="grid-item">
+                        <label for="smv">SMV</label>
+                        <input type="text" id="smv" name="smv">
+                    </div>
+                    <div class="grid-item">
+                        <label for="over_time">Over Time</label>
+                        <input type="text" id="over_time" name="over_time">
+                    </div>
+                    <div class="grid-item">
+                        <label for="incentive">Incentive</label>
+                        <input type="text" id="incentive" name="incentive">
+                    </div>
+                    <div class="grid-item">
+                        <label for="idle_time">Idle Time</label>
+                        <input type="text" id="idle_time" name="idle_time">
+                    </div>
+                    <div class="grid-item">
+                        <label for="idle_men">Idle Men</label>
+                        <input type="text" id="idle_men" name="idle_men">
+                    </div>
+                    <div class="grid-item">
+                        <label for="no_of_style_change">No. of Style Change</label>
+                        <input type="text" id="no_of_style_change" name="no_of_style_change">
+                    </div>
+                    <div class="grid-item">
+                        <label for="no_of_workers">No. of Workers</label>
+                        <input type="text" id="no_of_workers" name="no_of_workers">
+                    </div>
+                    <div class="grid-item">
+                        <label for="month">Month</label>
+                        <input type="text" id="month" name="month">
+                    </div>
+                </div>
+                <input type="submit" value="Predict">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

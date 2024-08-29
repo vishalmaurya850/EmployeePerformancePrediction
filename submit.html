@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Productivity Prediction Using ML</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #00bfff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #00a1d4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .prediction-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .graph-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .graph {
+            margin: 20px;
+        }
+        img {
+            max-width: 400px;
+            max-height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <span style="color: white; font-size: 22px;">Employee Productivity Prediction Using ML</span>
+        <div>
+            <a href="./">Home</a>
+            <a href="./about">About</a>
+            <a href="./predict">Predict</a>
+        </div>
+    </nav>
+
+    <!-- Content Wrapper -->
+    <div class="container">
+        <div class="prediction-text">{{ prediction_text }}</div>
+        <div class="graph-container">
+            {% for graph in graphs %}
+            <div class="graph">
+                <img src="data:image/png;base64,{{ graph }}" alt="Graph">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+</html>
