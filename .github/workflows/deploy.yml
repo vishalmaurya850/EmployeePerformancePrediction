@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # Set this to the branch you want to deploy from
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'  # Specify your Python version
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Install any dependencies if needed
+
+      - name: Build the project
+        run: |
+          python main.py
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # The directory to publish (update if needed)
+          publish_branch: gh-pages  # The branch to deploy to (use 'main' if you deploy from the main branch)
+
