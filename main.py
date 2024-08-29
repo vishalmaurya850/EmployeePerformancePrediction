@@ -88,8 +88,6 @@ model = pickle.load(open('model_lr.pkl','rb'))
 model = pickle.load(open('model_rf.pkl','rb'))
 model = pickle.load(open('model_xgb.pkl','rb'))
 
-const port = process.env.PORT || 5000;
-
 @app.route("/")
 def about():
     return render_template('home.html')
