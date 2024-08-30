@@ -1,7 +1,19 @@
 # Employee Performance Prediction
 
-Any business's success depends on its employees. Businesses that realize this are concerned about employee output and productivity. Productivity has a compounding effect at the different levels in the workplace, meaning that high productivity at a lower level of organization paves the way for higher productivity at the higher levels of the organization. Hence, analysis of the performance of employees in any organization is the need of the hour.
+## Overview
+Employee Performance Prediction is a project aimed at predicting the performance of employees using machine learning techniques. This can help organizations to identify high performers and areas where employees may need additional support or training.
 
-For Development:-
-1
-'''pip install -r requirements.txt'''
+## Features
+- Data preprocessing and cleaning
+- Exploratory Data Analysis (EDA)
+- Machine Learning model training and evaluation
+- Performance metrics and visualization
+
+## Installation
+To get started with the project, clone the repository and install the required dependencies:
+```bash
+git clone https://github.com/vishalmaurya850/EmployeePerformancePrediction.git
+cd EmployeePerformancePrediction
+pip install -r requirements.txt
+python main.py
+```
